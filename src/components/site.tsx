@@ -83,7 +83,7 @@ function Header() {
             <Link
               key={n.label}
               to={n.to}
-              hash={"hash" in n ? n.hash : undefined}
+              {...("hash" in n ? { hash: n.hash } : {})}
               className="link-underline text-sm"
               activeOptions={{ exact: true, includeHash: true }}
               activeProps={{ className: "text-accent" }}
@@ -114,7 +114,7 @@ function Header() {
             <Link
               key={n.label}
               to={n.to}
-              hash={"hash" in n ? n.hash : undefined}
+              {...("hash" in n ? { hash: n.hash } : {})}
               onClick={() => setOpen(false)}
               className="border-b py-4 font-display text-3xl"
             >
@@ -159,7 +159,7 @@ function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
             {nav.map((n) => (
               <li key={n.label}>
-                <Link to={n.to} hash={"hash" in n ? n.hash : undefined} className="link-underline">
+                <Link to={n.to} {...("hash" in n ? { hash: n.hash } : {})} className="link-underline">
                   {n.label}
                 </Link>
               </li>
