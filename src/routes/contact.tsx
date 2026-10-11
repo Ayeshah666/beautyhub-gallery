@@ -25,7 +25,7 @@ function Contact() {
   function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
-    const v = Object.fromEntries(f) as Record<string, string>;
+    const v = Object.fromEntries(f) as { name: string; phone: string; service: string; date: string; time: string; message: string };
     const err: Errors = {};
     if (!v.name?.trim()) err.name = "Please enter your name.";
     const phone = (v.phone || "").replace(/[\s-]/g, "");
