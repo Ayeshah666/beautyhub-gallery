@@ -104,7 +104,7 @@ function Contact() {
   );
 }
 
-function Field({ label, id, error, wide, children }: { label: string; id: string; error?: string; wide?: boolean; children: React.ReactNode }) {
+function Field({ label, id, error, wide, children }: { label: string; id: string; error?: string | undefined; wide?: boolean; children: React.ReactNode }) {
   return (
     <div className={wide ? "sm:col-span-2" : ""}>
       <label htmlFor={id} className="text-sm font-semibold">{label}</label>
